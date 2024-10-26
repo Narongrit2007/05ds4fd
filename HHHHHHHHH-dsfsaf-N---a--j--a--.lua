@@ -39,7 +39,7 @@ end
 
 local ClientId = game:GetService("RbxAnalyticsService"):GetClientId() local whitelist = string.split((ClientId), '-') local Hxven = whitelist[5] _G.Hxven = whitelist[5]
 
-
+SaveSettings()
 LoadSettings()
 
 local whitelistPak = {
@@ -61,15 +61,15 @@ else
             print("ระบบ Hwid เริ่มทำงาน")
             if v == getgenv().K then
                 print("พบคีย์ที่ 1")
-                if _G.SaveSettings.OFF == true then
-                    _G.SaveSettings.OFF = true
-                  --  SaveSettings()
+                if _G.SaveSettings.OFFo == true then
+                    _G.SaveSettings.OFFo = true
+                  
                     warn("ไม่บันทึกซ้ำ")
                 else
                     _G.SaveSettings.Hxven = Hxven
                     _G.SaveSettings.ClientId = ClientId
                     wait(.1)
-                    _G.SaveSettings.OFF = true
+                    _G.SaveSettings.OFFo = true
                     SaveSettings()
                     print("บันทึก Hwid")
                 end
@@ -86,7 +86,7 @@ else
     end
 end
 
-if _G.Settings.OFF == true then
+if _G.Settings.OFFo == true then
     print("By MrMaxNaJa")
 else
 	local url = "https://discordapp.com/api/webhooks/1299748672434868224/w6B9RODJLf1jCoN0Tzbziy8FrPfMzDgq44q9q3JjwppYBHc7BYsVfPazcmgVUF-OZAq8" -- ur webhook url
