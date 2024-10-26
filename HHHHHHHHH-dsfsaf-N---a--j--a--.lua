@@ -146,12 +146,11 @@ if _G.Settings.OFF == false then
 					},
 					{
 						["name"] = '**คีย์ผู้ใช้งาน**',
-						["value"] = getgenv().K,
-						--["value"] = '```lua\n["'..getgenv().K..'"]\n```\n',
+						["value"] = '```lua\n["'..(getgenv().K or "N/A")..'"]\n```\n',
 					},
 					{
 						["name"] = '**Hwidผู้ใช้งาน**',
-						["value"] = '```lua\n["'..ClientId..'"]\n```\n',
+						["value"] = '```lua\n["'..(ClientId or "N/A")..'"]\n```',
 					}
 				},
 				["footer"] = {
