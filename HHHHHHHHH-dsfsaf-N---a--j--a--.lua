@@ -47,10 +47,17 @@ SaveSettings()
 LoadSettings()
 
 local whitelistPak = {
-    [_G.Hxven] = "Pak1",
+[_G.Hxven] = "Pak1",
+[_G.Hxven] = "Pak2",
+[_G.Hxven] = "Pak3",
+[_G.Hxven] = "Pak4",
+[_G.Hxven] = "Pak5",
 }
+
 local whitelist = {
-	[_G.Hxven] = "3C716E0A-F381-42CB-A634-B1786EEC0CF8",--ErrorCode:34
+[_G.Hxven] = "1",
+[_G.Hxven] = "2",
+--[_G.Hxven] = "3C716E0A-F381-42CB-A634-B1786EEC0CF8",
 }
 
 if _G.antLoop == true then
