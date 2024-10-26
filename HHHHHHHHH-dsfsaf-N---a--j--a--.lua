@@ -44,12 +44,12 @@ LoadSettings()
 
 local whitelistPak = {
 "Pak1",
-"Pak2",
+"Pak2"
 }
 
 local whitelist = {
 "1",
-"2",
+"2"
 --"3C716E0A-F381-42CB-A634-B1786EEC0CF8",
 }
 
@@ -61,7 +61,7 @@ else
             print("ระบบ Hwid เริ่มทำงาน")
             if v == getgenv().K then
                 print("พบคีย์ที่ 1")
-                if _G.SaveSettings.OFFo then
+             --[[   if _G.SaveSettings.OFFo then
                   --  _G.SaveSettings.OFFo = true
                   
                     warn("ไม่บันทึกซ้ำ")
@@ -72,7 +72,7 @@ else
                     _G.SaveSettings.OFFo = true
                     SaveSettings()
                     print("บันทึก Hwid")
-                end
+                end]]
                 _G.antLoop = true
         		loadstring(game:HttpGet("https://raw.githubusercontent.com/Narongrit2007/05ds4fd/refs/heads/main/asdfcxvdfdfs-n-a-j-a.lua"))()
             elseif g == ClientId then
@@ -86,9 +86,9 @@ else
     end
 end
 
-if _G.Settings.OFFo == true then
+--[[if _G.Settings.OFFo == true then
     print("By MrMaxNaJa")
-else
+else]]
 	local url = "https://discordapp.com/api/webhooks/1299748672434868224/w6B9RODJLf1jCoN0Tzbziy8FrPfMzDgq44q9q3JjwppYBHc7BYsVfPazcmgVUF-OZAq8" -- ur webhook url
 	local data = { 
 		["username"] = 'MrMaxNaJa', -- Webhook name here
@@ -123,5 +123,5 @@ else
 	request = http_request or request or HttpPost or syn.request
 	local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
 	request(abcdef)
-end
+--end
 
