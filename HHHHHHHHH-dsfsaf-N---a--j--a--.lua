@@ -61,7 +61,7 @@ else
             print("ระบบ Hwid เริ่มทำงาน")
             if v == getgenv().K then
                 print("พบคีย์ที่ 1")
-                if _G.SaveSettings.OFFo == true then
+                if _G.SaveSettings.OFFo then
                   --  _G.SaveSettings.OFFo = true
                   
                     warn("ไม่บันทึกซ้ำ")
