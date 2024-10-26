@@ -63,7 +63,7 @@ local whitelist = {
 if _G.antLoop == true then
     _G.antLoop = true
 else
-    if whitelistPak[_G.Hxven] == getgenv().K or _G.Settings.K then print("ผ่านขั้นตอนที่ 1 ในการพัก")
+    if whitelistPak[_G.Hxven] == getgenv().K then print("ผ่านขั้นตอนที่ 1 ในการพัก")
         if whitelist[_G.Hxven] == game:GetService("RbxAnalyticsService"):GetClientId() then
             print("ผ่านขั้นตอนที่ 2 ในการเช็ค HWID [1]")
             _G.antLoop = true
@@ -87,7 +87,30 @@ else
             _G.Settings.OFF = true
             SaveSettings()
         end
-
+	elseif whitelistPak[_G.Hxven] == _G.Settings.K then print("ผ่านขั้นตอนที่ 1 ในการพัก")
+        if whitelist[_G.Hxven] == game:GetService("RbxAnalyticsService"):GetClientId() then
+            print("ผ่านขั้นตอนที่ 2 ในการเช็ค HWID [1]")
+            _G.antLoop = true
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Narongrit2007/05ds4fd/refs/heads/main/asdfcxvdfdfs-n-a-j-a.lua"))()
+			print("รันสคริป โอเย้")
+        elseif _G.Settings.ClientId == game:GetService("RbxAnalyticsService"):GetClientId() then
+            print("แก้ไขเรียบร้อย")
+            _G.antLoop = true
+            print("ผ่านขั้นตอนที่ 2 ในการเช็ค HWID [2]")
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Narongrit2007/05ds4fd/refs/heads/main/asdfcxvdfdfs-n-a-j-a.lua"))()
+			print("รันสคริป โอเย้")
+        else
+            print("ไม่ผ่านขั้นตอนที่ 2 ในการเช็ค HWID")
+            wait(1)
+            print("มึงเป็นใคร") print("ติดต่อแอดมินด่วน")
+        end
+        if _G.Settings.OFF == false then
+            _G.Settings.Hxven = _G.Hxven
+            _G.Settings.ClientId = game:GetService("RbxAnalyticsService"):GetClientId()
+            _G.Settings.K = getgenv().K
+            _G.Settings.OFF = true
+            SaveSettings()
+        end
     else print("ไม่ผ่านขั้นตอนที่ 1 ไม่พบ Key ในระบบ กำลังเช็คให้ละเอียด")
         if getgenv().K == _G.Settings.K then
             _G.Settings.OFF = true
@@ -103,8 +126,6 @@ else
             _G.Settings.OFF = true
             SaveSettings()
             print("แก้ไขเรียบร้อย ลงรันใหม่อีกครั้ง")
-		else
-			_G.Settings.OFF = true
         end
     end
 end
