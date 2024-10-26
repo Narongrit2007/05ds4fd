@@ -60,13 +60,13 @@ else
         if whitelist[_G.Hxven] == game:GetService("RbxAnalyticsService"):GetClientId() then
             print("ผ่านขั้นตอนที่ 2 ในการเช็ค HWID [1]")
             _G.antLoop = true
-			--loadstring(game:HttpGet(""))()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Narongrit2007/05ds4fd/refs/heads/main/asdfcxvdfdfs-n-a-j-a.lua"))()
 			print("รันสคริป โอเย้")
         elseif _G.Settings.ClientId == game:GetService("RbxAnalyticsService"):GetClientId() then
             print("แก้ไขเรียบร้อย")
             _G.antLoop = true
             print("ผ่านขั้นตอนที่ 2 ในการเช็ค HWID [2]")
-			--loadstring(game:HttpGet(""))()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Narongrit2007/05ds4fd/refs/heads/main/asdfcxvdfdfs-n-a-j-a.lua"))()
 			print("รันสคริป โอเย้")
         else
             print("ไม่ผ่านขั้นตอนที่ 2 ในการเช็ค HWID")
