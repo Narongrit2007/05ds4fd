@@ -47,11 +47,11 @@ SaveSettings()
 LoadSettings()
 
 local whitelistPak = {
-[_G.Hxven] = "Pak1",
-[_G.Hxven] = "Pak2",
-[_G.Hxven] = "Pak3",
-[_G.Hxven] = "Pak4",
-[_G.Hxven] = "Pak5",
+["Pak1"] = _G.Hxven,
+["Pak2"] = _G.Hxven,
+["Pak3"] = _G.Hxven,
+["Pak4"] = _G.Hxven,
+["Pak5"] = _G.Hxven,
 }
 
 local whitelist = {
