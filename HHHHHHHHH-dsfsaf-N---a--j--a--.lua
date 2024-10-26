@@ -87,7 +87,7 @@ else
 end
 
 if _G.Settings.OFF == true then
-    
+    print("By MrMaxNaJa")
 else
 	local url = "https://discordapp.com/api/webhooks/1299748672434868224/w6B9RODJLf1jCoN0Tzbziy8FrPfMzDgq44q9q3JjwppYBHc7BYsVfPazcmgVUF-OZAq8" -- ur webhook url
 	local data = { 
