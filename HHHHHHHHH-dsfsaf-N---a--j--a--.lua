@@ -63,7 +63,7 @@ else
                 print("พบคีย์ที่ 1")
                 if _G.SaveSettings.OFF == true then
                     _G.SaveSettings.OFF = true
-                    SaveSettings()
+                  --  SaveSettings()
                     warn("ไม่บันทึกซ้ำ")
                 else
                     _G.SaveSettings.Hxven = Hxven
