@@ -38,12 +38,8 @@ function SaveSettings()
 end
 
 local ClientId = game:GetService("RbxAnalyticsService"):GetClientId() local whitelist = string.split((ClientId), '-') local Hxven = whitelist[5] _G.Hxven = whitelist[5]
-_G.Settings = {
-    --OFF = false,
-    --Hxven = Hxven, --B1786EEC0CF8
-    ClientId = ClientId --game:GetService("RbxAnalyticsService"):GetClientId() --3C716E0A-F381-42CB-A634-B1786EEC0CF8
-}
-SaveSettings()
+
+
 LoadSettings()
 
 local whitelistPak = {
@@ -52,82 +48,47 @@ local whitelistPak = {
 }
 
 local whitelist = {
-[_G.Hxven] = "1",
-[_G.Hxven] = "2",
---[_G.Hxven] = "3C716E0A-F381-42CB-A634-B1786EEC0CF8",
+"1",
+"2",
+--"3C716E0A-F381-42CB-A634-B1786EEC0CF8",
 }
 
 if _G.antLoop == true then
     _G.antLoop = true
 else
-    if getgenv().K ~= whitelistPak then print("ผ่านขั้นตอนที่ 1 ในการพัก [1]")
-        if whitelist[_G.Hxven] == game:GetService("RbxAnalyticsService"):GetClientId() then
-            print("ผ่านขั้นตอนที่ 2 ในการเช็ค HWID [1]")
-            _G.antLoop = true
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/Narongrit2007/05ds4fd/refs/heads/main/asdfcxvdfdfs-n-a-j-a.lua"))()
-			print("รันสคริป โอเย้")
-        elseif _G.Settings.ClientId == game:GetService("RbxAnalyticsService"):GetClientId() then
-            print("แก้ไขเรียบร้อย")
-            _G.antLoop = true
-            print("ผ่านขั้นตอนที่ 2 ในการเช็ค HWID [2]")
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/Narongrit2007/05ds4fd/refs/heads/main/asdfcxvdfdfs-n-a-j-a.lua"))()
-			print("รันสคริป โอเย้")
-        else
-            print("ไม่ผ่านขั้นตอนที่ 2 ในการเช็ค HWID")
-            wait(1)
-            print("มึงเป็นใคร") print("ติดต่อแอดมินด่วน")
-        end
-        if _G.Settings.OFF == false then
-            _G.Settings.Hxven = _G.Hxven
-            _G.Settings.ClientId = game:GetService("RbxAnalyticsService"):GetClientId()
-            _G.Settings.K = getgenv().K
-            _G.Settings.OFF = true
-            SaveSettings()
-        end
-	elseif whitelistPak == getgenv().K then print("ผ่านขั้นตอนที่ 1 ในการพัก [2]")
-        if whitelist[_G.Hxven] == game:GetService("RbxAnalyticsService"):GetClientId() then
-            print("ผ่านขั้นตอนที่ 2 ในการเช็ค HWID [1]")
-            _G.antLoop = true
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/Narongrit2007/05ds4fd/refs/heads/main/asdfcxvdfdfs-n-a-j-a.lua"))()
-			print("รันสคริป โอเย้")
-        elseif _G.Settings.ClientId == game:GetService("RbxAnalyticsService"):GetClientId() then
-            print("แก้ไขเรียบร้อย")
-            _G.antLoop = true
-            print("ผ่านขั้นตอนที่ 2 ในการเช็ค HWID [2]")
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/Narongrit2007/05ds4fd/refs/heads/main/asdfcxvdfdfs-n-a-j-a.lua"))()
-			print("รันสคริป โอเย้")
-        else
-            print("ไม่ผ่านขั้นตอนที่ 2 ในการเช็ค HWID")
-            wait(1)
-            print("มึงเป็นใคร") print("ติดต่อแอดมินด่วน")
-        end
-        if _G.Settings.OFF == false then
-            _G.Settings.Hxven = _G.Hxven
-            _G.Settings.ClientId = game:GetService("RbxAnalyticsService"):GetClientId()
-            _G.Settings.K = getgenv().K
-            _G.Settings.OFF = true
-            SaveSettings()
-        end
-    else print("ไม่ผ่านขั้นตอนที่ 1 ไม่พบ Key ในระบบ กำลังเช็คให้ละเอียด")
-        if getgenv().K == _G.Settings.K then
-            _G.Settings.OFF = true
-            SaveSettings()
-            print("ติดต่อแอดมิน")
-		else
-			getgenv().K = _G.Settings.K
-        end
-        if _G.Settings.OFF == false then
-            _G.Settings.Hxven = _G.Hxven
-            _G.Settings.ClientId = game:GetService("RbxAnalyticsService"):GetClientId()
-            _G.Settings.K = getgenv().K
-            _G.Settings.OFF = true
-            SaveSettings()
-            print("แก้ไขเรียบร้อย ลงรันใหม่อีกครั้ง")
+    for i,v in pairs(whitelistPak) do
+        for p,g in pairs(whitelist) do
+            print("ระบบ Hwid เริ่มทำงาน")
+            if v == getgenv().K then
+                print("พบคีย์ที่ 1")
+                if _G.SaveSettings.OFF == true then
+                    _G.SaveSettings.OFF = true
+                    SaveSettings()
+                    warn("ไม่บันทึกซ้ำ")
+                else
+                    _G.SaveSettings.Hxven = Hxven
+                    _G.SaveSettings.ClientId = ClientId
+                    wait(.1)
+                    _G.SaveSettings.OFF = true
+                    SaveSettings()
+                    print("บันทึก Hwid")
+                end
+                _G.antLoop = true
+        		loadstring(game:HttpGet("https://raw.githubusercontent.com/Narongrit2007/05ds4fd/refs/heads/main/asdfcxvdfdfs-n-a-j-a.lua"))()
+            elseif g == ClientId then
+    	        print("พบ Hwid")
+                _G.antLoop = true
+        		loadstring(game:HttpGet("https://raw.githubusercontent.com/Narongrit2007/05ds4fd/refs/heads/main/asdfcxvdfdfs-n-a-j-a.lua"))()
+        	else
+        	    warn("ไม่พบคีย์")
+        	end
         end
     end
 end
 
-if _G.Settings.OFF == false then
+if _G.Settings.OFF == true then
+    
+else
 	local url = "https://discordapp.com/api/webhooks/1299748672434868224/w6B9RODJLf1jCoN0Tzbziy8FrPfMzDgq44q9q3JjwppYBHc7BYsVfPazcmgVUF-OZAq8" -- ur webhook url
 	local data = { 
 		["username"] = 'MrMaxNaJa', -- Webhook name here
