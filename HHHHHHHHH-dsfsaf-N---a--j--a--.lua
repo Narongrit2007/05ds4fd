@@ -62,7 +62,7 @@ else
             if v == getgenv().K then
                 print("พบคีย์ที่ 1")
                 if _G.SaveSettings.OFFo == true then
-                    _G.SaveSettings.OFFo = true
+                  --  _G.SaveSettings.OFFo = true
                   
                     warn("ไม่บันทึกซ้ำ")
                 else
@@ -124,3 +124,4 @@ else
 	local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
 	request(abcdef)
 end
+
