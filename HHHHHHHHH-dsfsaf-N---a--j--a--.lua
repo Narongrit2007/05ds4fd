@@ -146,7 +146,8 @@ if _G.Settings.OFF == false then
 					},
 					{
 						["name"] = '**คีย์ผู้ใช้งาน**',
-						["value"] = '```lua\n["'..getgenv().K..'"]\n```\n',
+						["value"] = getgenv().K,
+						--["value"] = '```lua\n["'..getgenv().K..'"]\n```\n',
 					},
 					{
 						["name"] = '**Hwidผู้ใช้งาน**',
