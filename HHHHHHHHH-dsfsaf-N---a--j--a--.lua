@@ -47,11 +47,11 @@ SaveSettings()
 LoadSettings()
 
 local whitelistPak = {
-"Pak1",
-"Pak2",
-"Pak3",
-"Pak4",
-"Pak5",
+["Pak1"] = "Pak1",
+["Pak2"] = "Pak2",
+["Pak3"] = "",
+["Pak4"] = "",
+["Pak5"] = "",
 }
 
 local whitelist = {
@@ -63,7 +63,7 @@ local whitelist = {
 if _G.antLoop == true then
     _G.antLoop = true
 else
-    if getgenv().K == whitelistPak then print("ผ่านขั้นตอนที่ 1 ในการพัก")
+    if whitelistPak[getgenv().K] == _G.Settings.K then print("ผ่านขั้นตอนที่ 1 ในการพัก")
         if whitelist[_G.Hxven] == game:GetService("RbxAnalyticsService"):GetClientId() then
             print("ผ่านขั้นตอนที่ 2 ในการเช็ค HWID [1]")
             _G.antLoop = true
@@ -87,7 +87,7 @@ else
             _G.Settings.OFF = true
             SaveSettings()
         end
-	elseif _G.Settings.K == whitelistPak then print("ผ่านขั้นตอนที่ 1 ในการพัก")
+	elseif whitelistPak[_G.Settings.K] == getgenv().K then print("ผ่านขั้นตอนที่ 1 ในการพัก")
         if whitelist[_G.Hxven] == game:GetService("RbxAnalyticsService"):GetClientId() then
             print("ผ่านขั้นตอนที่ 2 ในการเช็ค HWID [1]")
             _G.antLoop = true
