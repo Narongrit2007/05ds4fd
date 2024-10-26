@@ -87,11 +87,14 @@ else
             _G.Settings.OFF = true
             SaveSettings()
         end
+
     else print("ไม่ผ่านขั้นตอนที่ 1 ไม่พบ Key ในระบบ กำลังเช็คให้ละเอียด")
         if getgenv().K == _G.Settings.K then
             _G.Settings.OFF = true
             SaveSettings()
             print("ติดต่อแอดมิน")
+		else
+			getgenv().K = _G.Settings.K
         end
         if _G.Settings.OFF == false then
             _G.Settings.Hxven = _G.Hxven
@@ -100,6 +103,8 @@ else
             _G.Settings.OFF = true
             SaveSettings()
             print("แก้ไขเรียบร้อย ลงรันใหม่อีกครั้ง")
+		else
+			_G.Settings.OFF = true
         end
     end
 end
