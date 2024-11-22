@@ -40,8 +40,8 @@ end
 print("whitelist Chack..30%")
 local ClientId = game:GetService("RbxAnalyticsService"):GetClientId() local whitelist = string.split((ClientId), '-') local Hxven = whitelist[5] _G.Hxven = whitelist[5]
 
-SaveSettings()
-LoadSettings()
+--SaveSettings()
+--LoadSettings()
 print("whitelist Chack..60%")
 local whitelistPak = {
 	"Pak1",
