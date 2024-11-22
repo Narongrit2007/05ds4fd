@@ -51,6 +51,7 @@ local whitelistPak = {
 local whitelist = {
 "f95a0b9a-1373-4755-a64b-0eeb0d32c5d6", --มือถือ Max
 "3C716E0A-F381-42CB-A634-B1786EEC0CF8", --PC Wx
+"e19cc5ad-df97-4c06-b81c-327ce7daf342", --มือถือ ใน pc wx
 }
 print("whitelist Chack..64%")
 function maxwx_kasodljdfincxkvhxzcuvhfdusghughcjxzvbkczjkfgdyasid()
