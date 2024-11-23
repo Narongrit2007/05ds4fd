@@ -2825,23 +2825,3 @@ end)
 
 Chack:Seperator("Chack Fruit Drop")
 print("A")
-
-function AntiKick()
-    for  descendant in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
-        if descendant:IsA("LocalScript") then
-            local blacklistNames = {"General", "Shiftlock", "FallDamage", "4444", "CamBob", "JumpCD", "Looking", "Run"}
-            if table.find(blacklistNames, descendant.Name) then
-                descendant:Destroy()
-            end
-        end
-    end
-    for  descendant in pairs(game:GetService("Players").LocalPlayer.PlayerScripts:GetDescendants()) do
-        if descendant:IsA("LocalScript") then
-            local blacklistNames = {"RobloxMotor6DBugFix", "Clans", "Codes", "CustomForceField", "MenuBloodSp", "PlayerList"}
-            if table.find(blacklistNames, descendant.Name) then
-                descendant:Destroy()
-            end
-        end
-    end
-end
-AntiKick()
