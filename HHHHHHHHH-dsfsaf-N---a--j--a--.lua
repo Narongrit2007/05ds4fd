@@ -120,7 +120,6 @@ end
 print("whitelist Chack..60%")
 
 local whitelist7 = { --คีย์ ไม่ถาวร
-
 "f95a0b9a-1373-4755-a64b-0eeb0d32c5d6", --มือถือ Max
 --"3C716E0A-F381-42CB-A634-B1786EEC0CF8", --PC Wx
 --"53FF23FF-8908-4496-8B86-147B02015C9D", --PC MAX
@@ -130,6 +129,7 @@ local whitelist = { --คีย์ ถาวร
 --"3C716E0A-F381-42CB-A634-B1786EEC0CF8", --PC Wx
 "53FF23FF-8908-4496-8B86-147B02015C9D", --PC MAX
 }
+
 print("whitelist Chack..64%")
 
 -- กำหนดตาราง Key พร้อมข้อมูลของ Key แต่ละตัว
