@@ -2234,37 +2234,41 @@ task.spawn(function()
     end
 end)
 
-spawn(function()
-    while wait() do
-        pcall(function()
-            if _G.Settings.AutoFarm then
+task.spawn(function()
+    while task.wait() do
+        if _G.Settings.AutoFarm then
+            pcall(function()
                 CheckLevel()
                 for i, v in pairs(game:GetService("Workspace").Monster.Mon:GetChildren()) do
                     if v.Name == NameMon then
                         if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-                            repeat wait()
-                                EquipWeapon(_G.Settings.SelectWeapon)
-                                Haki()
+                            repeat task.wait()
 								PosMon = v.HumanoidRootPart.CFrame
-                                AutoSkill()
-                                Cl()
-                                Tween(v.HumanoidRootPart.CFrame * MethodFarm)--CFrame.new(0,0,7)  --* CFrame.Angles(math.rad(-90),0,0)
+                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * MethodFarm--CFrame.new(0,0,7)  --* CFrame.Angles(math.rad(-90),0,0)
                             until not _G.Settings.AutoFarm or not v.Parent or v.Humanoid.Health <= 0 or game:GetService("Players").LocalPlayer.PlayerGui.MainGui.QuestBoard.Visible == false
                         end
                     end
                 end
                 for i, v in pairs(game:GetService("Workspace").Monster.Boss:GetChildren()) do
                     if v.Name == NameMon then
-                        repeat wait()
-                            EquipWeapon(_G.Settings.SelectWeapon)
-                            Haki()
+                        repeat task.wait()
 							PosMon = v.HumanoidRootPart.CFrame
-                            AutoSkill()
-                            Cl()
-                            Tween(v.HumanoidRootPart.CFrame * MethodFarm)--CFrame.new(0,0,7)  --* CFrame.Angles(math.rad(-90),0,0)
+                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * MethodFarm--CFrame.new(0,0,7)  --* CFrame.Angles(math.rad(-90),0,0)
                         until not _G.Settings.AutoFarm or not v.Parent or v.Humanoid.Health <= 0 or game:GetService("Players").LocalPlayer.PlayerGui.MainGui.QuestBoard.Visible == false
                     end
                 end
+            end)
+        end
+    end
+end)
+
+task.spawn(function()
+    while task.wait() do
+        pcall(function()
+            if _G.Settings.AutoFarm then
+                EquipWeapon(_G.Settings.SelectWeapon)
+                AutoSkill() Cl()
+                Haki()
             end
         end)
     end
