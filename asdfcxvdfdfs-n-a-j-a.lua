@@ -24,12 +24,12 @@ getgenv().Key = "Pak1"
 --_G.Antloopm = false
 
 -- รายการคีย์และวันหมดอายุ
---loadstring(game:HttpGet("https://pastebin.com/raw/m3QzDi35"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Narongrit2007/05ds4fd/refs/heads/main/HHHHHHHHH-dsfsaf-N---a--j--a--.lua"))()
 -- รายการคีย์และวันหมดอายุ
-local whitelistPak = {
+--[[local whitelistPak = {
     { Hwid = "53FF23FF-8908-4496-8B86-147B02015C9D", Key = "Pak1", ExpiryDate = os.time{year=2025, month=11, day=25, hour=24, min=0}, Permanent = false },
     --{ Hwid = "53FF23FF-8908-4496-8B86-147B02015C9D", Key = "Pak2", ExpiryDate = math.huge, Permanent = true } -- Key แบบถาวร
-}
+}]]
 
 -- ฟังก์ชันตรวจสอบว่า Key หมดอายุหรือยัง
 local function isKeyExpired(keyData)
