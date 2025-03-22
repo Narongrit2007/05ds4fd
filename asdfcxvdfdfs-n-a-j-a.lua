@@ -1,5 +1,5 @@
 print("System MrMaxNaJa")
-getgenv().Key = "Pak1"
+--[[getgenv().Key = "Pak1"
 
    getgenv().config = {
         Selecter = "Luffo",--Roku ,Luffo
@@ -13,15 +13,15 @@ getgenv().Key = "Pak1"
 
         Black_Screen = false,
         linkWebHook = "https://discord.com/api/webhooks/1350444648266465310/gOD38P3z3wquPNbH-7Q74el5o5w9oY8zRaTgwxKo5bHNY8AulfYaVOSmGzQy_3pBCO1K"
-    }
+    }]]
 -- กำหนด Key ที่ใช้งาน
 --เฉพาะ ADMIN \/
 --getgenv().Key = "Pak1"
 
 
 --เฉพาะ ADMIN \/
---_G.antLoop = false
---_G.Antloopm = false
+_G.antLoop = false
+_G.Antloopm = false
 
 -- รายการคีย์และวันหมดอายุ
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Narongrit2007/05ds4fd/refs/heads/main/HHHHHHHHH-dsfsaf-N---a--j--a--.lua"))()
