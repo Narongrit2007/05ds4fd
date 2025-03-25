@@ -9,7 +9,6 @@
         GemsA = "20,500",-- ใส่จำนวนตัวเลข ต้องเขียนเหมือนในเกม ตัวอย่างเช่น 20,500 (ต้องมี  , ด้วย)
 
         Black_Screen = false,
-		linkWebHook = "https://discord.com/api/webhooks/1350444648266465310/gOD38P3z3wquPNbH-7Q74el5o5w9oY8zRaTgwxKo5bHNY8AulfYaVOSmGzQy_3pBCO1K"
     }
 ]]
 
