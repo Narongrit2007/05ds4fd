@@ -27,7 +27,7 @@ _G.Antloopm = false
 --loadstring(game:HttpGet("https://pastebin.com/raw/m3QzDi35"))()
 -- รายการคีย์และวันหมดอายุ
 local whitelistPak = {--845F3607-8A0E-4D9A-9E13-392E4BD64248
-    { Hwid = "af72c7c3-e9b1-498e-a4e8-135ba777df70", Key = "LOL", ExpiryDate = os.time{year=0, month=0, day=0, hour=0, min=0}, Permanent = false },
+    { Hwid = "af72c7c3-e9b1-498e-a4e8-135ba777df70", Key = "LOL", ExpiryDate = os.time{year=2025, month=11, day=25, hour=24, min=0}, Permanent = false },
     { Hwid = "", Key = "M7TJG-B7LZD-5Y4TI-A8R09", ExpiryDate = os.time{year=0, month=0, day=0, hour=0, min=0}, Permanent = false },
     { Hwid = "", Key = "HH617-QVFGC-W5KTC-VWDO7", ExpiryDate = os.time{year=0, month=0, day=0, hour=0, min=0}, Permanent = false },
     { Hwid = "", Key = "051E7-TVC4F-FL50S-7URWP", ExpiryDate = os.time{year=0, month=0, day=0, hour=0, min=0}, Permanent = false },
