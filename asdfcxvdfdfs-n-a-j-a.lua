@@ -29,8 +29,8 @@ _G.Antloopm = false
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/Narongrit2007/05ds4fd/refs/heads/main/HHHHHHHHH-dsfsaf-N---a--j--a--.lua"))()
 
 local whitelistPak = {
-    { Hwid = "d", Key = "5ISYD-9VTM4-CQGAW-FZPN8", ExpiryDate = os.time{year=2025, month=11, day=25, hour=24, min=0}, Permanent = false },
-    { Hwid = "", Key = "5ISYD-9VTM4-CQGAW-FZPN8", ExpiryDate = math.huge, Permanent = true } -- Key แบบถาวร
+    { Hwid = "3153E1FF-1", Key = "Key1", ExpiryDate = os.time{year=2025, month=11, day=25, hour=24, min=0}, Permanent = false },
+    { Hwid = "3153E1FF-1F63-438F-B33E-CAE700815AD3", Key = "5ISYD-9VTM4-CQGAW-FZPN8", ExpiryDate = math.huge, Permanent = true } -- Key แบบถาวร
 }
 
 -- ฟังก์ชันตรวจสอบว่า Key หมดอายุหรือยัง
