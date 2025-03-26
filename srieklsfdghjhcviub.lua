@@ -1,16 +1,13 @@
 --เฉพาะ ADMIN \/
---[[    getgenv().config = {
-        Selecter = "Luffo",--Roku ,Luffo
-        AutoFarmKitun = true, -- ไก่ตัน
-		AutoFarm = true,
-		FarmTime = 2,
-
-        Present = "14,000",-- ใส่จำนวนตัวเลข ต้องเขียนเหมือนในเกม ตัวอย่างเช่น 20,500 (ต้องมี  , ด้วย)
-        GemsA = "20,500",-- ใส่จำนวนตัวเลข ต้องเขียนเหมือนในเกม ตัวอย่างเช่น 20,500 (ต้องมี  , ด้วย)
-
-        Black_Screen = false,
-    }
-]]
+getgenv().config = {
+	autoequipm = false,
+	startLobbym = true,
+	Notification = true,
+	AutoPlaym = true,
+	AutoUpgradeUnitsm = true,
+	skipWavem = true,
+	autoRetrym = true,
+}
 
 _G.ColorMain = Color3.fromRGB(25,25,25)
 _G.ColorMain2 = Color3.fromRGB(12,12,12)
@@ -26,89 +23,16 @@ _G.ColorButton_Stroke = Color3.fromRGB(0,0,200)
 _G.Text_Name_and_Hub_RGB_R = true --true , false
 _G.Text_Name_and_Hub_Color = Color3.fromRGB(255,255,255)
 
---[[_G.ColorMain = Color3.fromRGB(255,0,0)
-_G.ColorMain2 = Color3.fromRGB(0,0,35)
-------------------------------------
-_G.ColorTab = Color3.fromRGB(0,0,50)
-_G.ColorTop = Color3.fromRGB(0,0,50)
-_G.ColorTopx = Color3.fromRGB(0,0,60)
-_G.ColorTopn = Color3.fromRGB(0,0,65)
-
-_G.ColorButton = Color3.fromRGB(0,0,150)
-_G.ColorButton_Stroke = Color3.fromRGB(0,0,200)
-
-_G.Text_Name_and_Hub_RGB_R = true --true , false
-_G.Text_Name_and_Hub_Color = Color3.fromRGB(255,255,255)
-
-]]
-
-
-local HttpService = game:GetService("HttpService")
-local SETTINGS_PATH = "MrMaxNaJa/Wx/AFK.json"
-local BASE_FOLDER = "MrMaxNaJa"
-local GAME_FOLDER = BASE_FOLDER .. "/Wx"
-
-local function EnsureFoldersExist()
-    if not isfolder(BASE_FOLDER) then
-        makefolder(BASE_FOLDER)
-    end
-    if not isfolder(GAME_FOLDER) then
-        makefolder(GAME_FOLDER)
-    end
-end
-
-function SaveSettings()
-    if not (readfile and writefile and isfile and isfolder) then
-        return warn("Status: Undetected Executor")
-    end
-
-    EnsureFoldersExist()
-    local savedSettings = table.clone(_G.Settings)
-    writefile(SETTINGS_PATH, HttpService:JSONEncode(savedSettings))
-end
-
-function LoadSettings()
-    if not (readfile and writefile and isfile and isfolder and makefolder) then
-        return warn("Status: Undetected Executor")
-    end
-
-    EnsureFoldersExist()
-    
-    if isfile(SETTINGS_PATH) then
-        local success, fileContent = pcall(readfile, SETTINGS_PATH)
-        if success then
-            local successDecode, decodedSettings = pcall(HttpService.JSONDecode, HttpService, fileContent)
-            if successDecode and type(decodedSettings) == "table" then
-                for key, value in pairs(decodedSettings) do
-                    _G.Settings[key] = value
-                end
-            else
-                warn("Failed to decode settings file. Resetting to default.")
-                SaveSettings()
-            end
-        else
-            warn("Failed to read settings file. Resetting to default.")
-            SaveSettings()
-        end
-    else
-        SaveSettings()
-    end
-end
-
-wait(0.01)
-print("LoadSettings")
---LoadSettings()
-print("LoadSettings .. OK")
 if game.PlaceId == 16146832113 then
 	local player = game:GetService("Players").LocalPlayer
 	--local LvAmount = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Level.Level.Text
 	--local goAmount = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Currencies.Gold.Amount.Text
 	--local gemAmount = player:WaitForChild("PlayerGui"):WaitForChild("HUD"):WaitForChild("Main"):WaitForChild("Currencies"):WaitForChild("Gems"):WaitForChild("Amount").Text
 	--local PresentAmount = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Currencies.Present.Amount.Text
-	_G.Settings.LvAmount = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Level.Level.Text
-	_G.Settings.goAmount = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Currencies.Gold.Amount.Text
-	_G.Settings.gemAmount = player:WaitForChild("PlayerGui"):WaitForChild("HUD"):WaitForChild("Main"):WaitForChild("Currencies"):WaitForChild("Gems"):WaitForChild("Amount").Text
-	_G.Settings.PresentAmount = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Currencies.Present.Amount.Text
+	getgenv().LvAmount = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Level.Level.Text
+	getgenv().goAmount = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Currencies.Gold.Amount.Text
+	getgenv().gemAmount = player:WaitForChild("PlayerGui"):WaitForChild("HUD"):WaitForChild("Main"):WaitForChild("Currencies"):WaitForChild("Gems"):WaitForChild("Amount").Text
+	getgenv().PresentAmount = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Currencies.Present.Amount.Text
 	SaveSettings()
 end
 _G.TextMainButton_1 = "[+] Level : "
@@ -118,20 +42,21 @@ _G.TextMainButton_4 = "[+] Present : "
 _G.TextMainButton_5 = "[!] ออกนอก lobby จะไม่อัพเดพ"
 _G.TextMainButton_6 = "[+] ขอเพิ่มมาได้นะว่าง 2 ช่อง"
 
+if game.PlaceId == 16146832113 then
 spawn(function()
 	while task.wait() do
 		pcall(function()
-			_G.TextMainButton_1 = "[+] Level : ".. _G.Settings.LvAmount or ""
-			_G.TextMainButton_2 = "[+] Gold : ".. _G.Settings.goAmount or ""
-			_G.TextMainButton_3 = "[+] Gems : ".. _G.Settings.gemAmount or ""
-			_G.TextMainButton_4 = "[+] Present : ".. _G.Settings.PresentAmount or ""
+			_G.TextMainButton_1 = "[+] Level : ".. getgenv().LvAmount or ""
+			_G.TextMainButton_2 = "[+] Gold : ".. getgenv().goAmount or ""
+			_G.TextMainButton_3 = "[+] Gems : ".. getgenv().gemAmount or ""
+			_G.TextMainButton_4 = "[+] Present : ".. getgenv().PresentAmount or ""
 			--_G.TextMainButton_5 = "[+] "
 			--_G.TextMainButton_6 = "[+] ขอเพิ่มมาได้นะว่าง 2 ช่อง"
 		end)
 		wait(10)
 	end
 end)
-
+end
 wait(0.1)   
 do local GUI = game.CoreGui:FindFirstChild("MAXUI")
 	if GUI then
@@ -1339,23 +1264,22 @@ end
 --local Update = loadstring(game:HttpGet("https://raw.githubusercontent.com/NaJaxHub/Free-All-UI/main/GUI-MrMaxNaJa-FF"))()
 
 local Library = Update:Window("MrMaxNaJa Community","rbxassetid://9295892168","                                          GUI By MrMaxNaJa",Enum.KeyCode.RightControl);
-
-Main = Library:Tab("Text")
-
---LoadSettings()
-Main:Line()
-Main:Label(_G.TextMainButton_1)
-Main:Line()
-Main:Label(_G.TextMainButton_2)
-Main:Line()
-Main:Label(_G.TextMainButton_3)
-Main:Line()
-Main:Label(_G.TextMainButton_4)
-Main:Line()
-Main:Label(_G.TextMainButton_5)
-Main:Line()
-Main:Label(_G.TextMainButton_6)
-
+if game.PlaceId == 16146832113 then
+	Main = Library:Tab("Text")
+	--LoadSettings()
+	Main:Line()
+	Main:Label(_G.TextMainButton_1)
+	Main:Line()
+	Main:Label(_G.TextMainButton_2)
+	Main:Line()
+	Main:Label(_G.TextMainButton_3)
+	Main:Line()
+	Main:Label(_G.TextMainButton_4)
+	Main:Line()
+	Main:Label(_G.TextMainButton_5)
+	Main:Line()
+	Main:Label(_G.TextMainButton_6)
+end
 --[[MainA:Line()
 MainA:Seperator("Web Hook")
 
@@ -1389,7 +1313,7 @@ if game.PlaceId == 16146832113 then
     end
     spawn(function()
         while task.wait() do
-            if _G.Settings.autoequipm then
+            if getgenv().config.autoequipm then
                 pcall(function()
                     autoequipm()
                 end)
@@ -1397,8 +1321,8 @@ if game.PlaceId == 16146832113 then
             wait(1)
         end
     end)
-    Maina:Toggle("Auto Equip Units",_G.Settings.autoequipm,function(a)
-        _G.Settings.autoequipm = a
+    Maina:Toggle("Auto Equip Units",getgenv().config.autoequipm,function(a)
+        getgenv().config.autoequipm = a
         print("autoequip = "..a)
         SaveSettings()
     end)
@@ -1434,8 +1358,8 @@ if game.PlaceId == 16146832113 then
         game:GetService("ReplicatedStorage").Networking.LobbyEvent:FireServer(unpack(args))
     end
 
-    Maina:Toggle("Auto Start Lobby",_G.Settings.startLobbym,function(a)
-        _G.Settings.startLobbym = a
+    Maina:Toggle("Auto Start Lobby",getgenv().config.startLobbym,function(a)
+        getgenv().config.startLobbym = a
         SaveSettings()
         print("autoequip = "..a)
     end)
@@ -1445,7 +1369,7 @@ if game.PlaceId == 16146832113 then
     end)
     spawn(function()
         while task.wait() do
-            if _G.Settings.startLobbym then
+            if getgenv().config.startLobbym then
                 pcall(function()
                     startLobbym()
                 end)
@@ -1481,7 +1405,7 @@ elseif game.PlaceId == 16277809958 then
     local unitNames = {}
     spawn(function()
         while task.wait() do
-            if _G.Settings.AutoPlaym then
+            if getgenv().config.AutoPlaym then
                 if unitImage then
                     local viewportFrame = unitImage:FindFirstChild("ViewportFrame")
                     if viewportFrame then
@@ -1518,7 +1442,7 @@ elseif game.PlaceId == 16277809958 then
     spawn(function()
         while task.wait() do
 		    pcall(function()
-            	if _G.Settings.AutoPlaym then
+            	if getgenv().config.AutoPlaym then
                 	local yenimValuem = checkYenimm()
                 	if yenimValuem >= 250 then
                         local maxnaja = {
@@ -1540,11 +1464,11 @@ elseif game.PlaceId == 16277809958 then
                                         }
                                     }
                                     game:GetService("ReplicatedStorage").Networking.UnitEvent:FireServer(unpack(args))
-									wait(.05)
+									wait(.1)
                                 end
                             end
                         end
-						wait(2.3)
+						wait(0.5)
                     end
                 end
                 --(2)
@@ -1552,14 +1476,14 @@ elseif game.PlaceId == 16277809958 then
         end
     end)
 
-	Maina:Toggle("Notification Off",_G.Settings.Notification,function(a)
+	Maina:Toggle("Notification Off",getgenv().config.Notification,function(a)
 		game:GetService("Players").LocalPlayer.PlayerGui.Notification.Main.Visble = a
-        _G.Settings.Notification = a
+        getgenv().config.Notification = a
 		SaveSettings()
     end)
 
-    Maina:Toggle("Auto Play",_G.Settings.AutoPlaym,function(a)
-        _G.Settings.AutoPlaym = a
+    Maina:Toggle("Auto Play",getgenv().config.AutoPlaym,function(a)
+        getgenv().config.AutoPlaym = a
         SaveSettings()
         print("AutoPlay = "..a)
     end)
@@ -1618,20 +1542,20 @@ elseif game.PlaceId == 16277809958 then
 
     spawn(function()
         while task.wait() do
-            if _G.Settings.AutoUpgradeUnitsm then
+            if getgenv().config.AutoUpgradeUnitsm then
                 pcall(function()
                     local yenimValuem = checkYenimm()
                     if yenimValuem >= 250 then
                         autoUpgradeUnitsm()
-						wait(5)
+						wait(2)
                     end
                 end)
             end
             wait(1)
         end
     end)
-    Maina:Toggle("Auto UpgradeUnits",_G.Settings.AutoUpgradeUnitsm,function(a)
-        _G.Settings.AutoUpgradeUnitsm = a
+    Maina:Toggle("Auto UpgradeUnits",getgenv().config.AutoUpgradeUnitsm,function(a)
+        getgenv().config.AutoUpgradeUnitsm = a
         SaveSettings()
         print("AutoUpgradeUnits = "..a)
     end)
@@ -1641,7 +1565,7 @@ elseif game.PlaceId == 16277809958 then
     Maina:Seperator("Auto SkipWave")
     spawn(function()
         while task.wait() do
-            if _G.Settings.skipWavem then
+            if getgenv().config.skipWavem then
                 pcall(function()
                     skipWavem()
                 end)
@@ -1649,8 +1573,8 @@ elseif game.PlaceId == 16277809958 then
             wait(1)
         end
     end)
-    Maina:Toggle("Auto Skip Wave",_G.Settings.skipWavem,function(a)
-        _G.Settings.skipWavem = a
+    Maina:Toggle("Auto Skip Wave",getgenv().config.skipWavem,function(a)
+        getgenv().config.skipWavem = a
         SaveSettings()
         print("skipWave = "..a)
     end)
@@ -1661,7 +1585,7 @@ elseif game.PlaceId == 16277809958 then
     Maina:Seperator("Auto Retry")
     spawn(function()
         while task.wait() do
-            if _G.Settings.autoRetrym then
+            if getgenv().config.autoRetrym then
                 pcall(function()
                     autoRetrym()
                 end)
@@ -1669,8 +1593,8 @@ elseif game.PlaceId == 16277809958 then
             wait(5)
         end
     end)
-    Maina:Toggle("Auto Retry",_G.Settings.autoRetrym,function(a)
-        _G.Settings.autoRetrym = a
+    Maina:Toggle("Auto Retry",getgenv().config.autoRetrym,function(a)
+        getgenv().config.autoRetrym = a
         SaveSettings()
         print("autoRetry = "..a)
     end)
