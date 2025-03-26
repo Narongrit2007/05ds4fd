@@ -1,13 +1,4 @@
 --เฉพาะ ADMIN \/
-getgenv().config = {
-	autoequipm = false,
-	startLobbym = true,
-	Notification = true,
-	AutoPlaym = true,
-	AutoUpgradeUnitsm = true,
-	skipWavem = true,
-	autoRetrym = true
-}
 
 _G.ColorMain = Color3.fromRGB(25,25,25)
 _G.ColorMain2 = Color3.fromRGB(12,12,12)
