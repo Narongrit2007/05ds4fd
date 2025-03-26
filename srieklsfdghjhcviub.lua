@@ -23,18 +23,6 @@ _G.ColorButton_Stroke = Color3.fromRGB(0,0,200)
 _G.Text_Name_and_Hub_RGB_R = true --true , false
 _G.Text_Name_and_Hub_Color = Color3.fromRGB(255,255,255)
 
-if game.PlaceId == 16146832113 then
-	local player = game:GetService("Players").LocalPlayer
-	--local LvAmount = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Level.Level.Text
-	--local goAmount = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Currencies.Gold.Amount.Text
-	--local gemAmount = player:WaitForChild("PlayerGui"):WaitForChild("HUD"):WaitForChild("Main"):WaitForChild("Currencies"):WaitForChild("Gems"):WaitForChild("Amount").Text
-	--local PresentAmount = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Currencies.Present.Amount.Text
-	getgenv().LvAmount = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Level.Level.Text
-	getgenv().goAmount = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Currencies.Gold.Amount.Text
-	getgenv().gemAmount = player:WaitForChild("PlayerGui"):WaitForChild("HUD"):WaitForChild("Main"):WaitForChild("Currencies"):WaitForChild("Gems"):WaitForChild("Amount").Text
-	getgenv().PresentAmount = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Currencies.Present.Amount.Text
-	
-end
 _G.TextMainButton_1 = "[+] Level : "
 _G.TextMainButton_2 = "[+] Gold : "
 _G.TextMainButton_3 = "[+] Gems : "
@@ -42,15 +30,14 @@ _G.TextMainButton_4 = "[+] Present : "
 _G.TextMainButton_5 = "[!] ออกนอก lobby จะไม่อัพเดพ"
 _G.TextMainButton_6 = "[+] ขอเพิ่มมาได้นะว่าง 2 ช่อง"
 
-
 spawn(function()
 	while task.wait() do
 			if game.PlaceId == 16146832113 then
 		pcall(function()
-			_G.TextMainButton_1 = "[+] Level : ".. getgenv().LvAmount or ""
-			_G.TextMainButton_2 = "[+] Gold : ".. getgenv().goAmount or ""
-			_G.TextMainButton_3 = "[+] Gems : ".. getgenv().gemAmount or ""
-			_G.TextMainButton_4 = "[+] Present : ".. getgenv().PresentAmount or ""
+			_G.TextMainButton_1 = "[+] Level : ".. game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Level.Level.Text or ""
+			_G.TextMainButton_2 = "[+] Gold : "..game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Currencies.Gold.Amount.Text or ""
+			_G.TextMainButton_3 = "[+] Gems : ".. game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("HUD"):WaitForChild("Main"):WaitForChild("Currencies"):WaitForChild("Gems"):WaitForChild("Amount").Text or ""
+			_G.TextMainButton_4 = "[+] Present : ".. game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Currencies.Present.Amount.Text or ""
 			--_G.TextMainButton_5 = "[+] "
 			--_G.TextMainButton_6 = "[+] ขอเพิ่มมาได้นะว่าง 2 ช่อง"
 		end)
