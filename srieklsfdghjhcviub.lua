@@ -33,7 +33,7 @@ if game.PlaceId == 16146832113 then
 	getgenv().goAmount = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Currencies.Gold.Amount.Text
 	getgenv().gemAmount = player:WaitForChild("PlayerGui"):WaitForChild("HUD"):WaitForChild("Main"):WaitForChild("Currencies"):WaitForChild("Gems"):WaitForChild("Amount").Text
 	getgenv().PresentAmount = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Currencies.Present.Amount.Text
-	SaveSettings()
+	
 end
 _G.TextMainButton_1 = "[+] Level : "
 _G.TextMainButton_2 = "[+] Gold : "
@@ -1324,7 +1324,7 @@ if game.PlaceId == 16146832113 then
     Maina:Toggle("Auto Equip Units",getgenv().config.autoequipm,function(a)
         getgenv().config.autoequipm = a
         print("autoequip = "..a)
-        SaveSettings()
+        
     end)
     Maina:Button("Equip Units",function()
         autoequipm()
@@ -1360,7 +1360,7 @@ if game.PlaceId == 16146832113 then
 
     Maina:Toggle("Auto Start Lobby",getgenv().config.startLobbym,function(a)
         getgenv().config.startLobbym = a
-        SaveSettings()
+        
         print("autoequip = "..a)
     end)
     Maina:Button("Start Lobby",function()
@@ -1479,12 +1479,12 @@ elseif game.PlaceId == 16277809958 then
 	Maina:Toggle("Notification Off",getgenv().config.Notification,function(a)
 		game:GetService("Players").LocalPlayer.PlayerGui.Notification.Main.Visble = a
         getgenv().config.Notification = a
-		SaveSettings()
+		
     end)
 
     Maina:Toggle("Auto Play",getgenv().config.AutoPlaym,function(a)
         getgenv().config.AutoPlaym = a
-        SaveSettings()
+        
         print("AutoPlay = "..a)
     end)
     Maina:Button("Play",function()
@@ -1556,7 +1556,7 @@ elseif game.PlaceId == 16277809958 then
     end)
     Maina:Toggle("Auto UpgradeUnits",getgenv().config.AutoUpgradeUnitsm,function(a)
         getgenv().config.AutoUpgradeUnitsm = a
-        SaveSettings()
+        
         print("AutoUpgradeUnits = "..a)
     end)
     Maina:Button("Upgrade Units",function()
@@ -1575,7 +1575,7 @@ elseif game.PlaceId == 16277809958 then
     end)
     Maina:Toggle("Auto Skip Wave",getgenv().config.skipWavem,function(a)
         getgenv().config.skipWavem = a
-        SaveSettings()
+        
         print("skipWave = "..a)
     end)
     Maina:Button("Skip Wave",function()
@@ -1595,7 +1595,7 @@ elseif game.PlaceId == 16277809958 then
     end)
     Maina:Toggle("Auto Retry",getgenv().config.autoRetrym,function(a)
         getgenv().config.autoRetrym = a
-        SaveSettings()
+        
         print("autoRetry = "..a)
     end)
 end
