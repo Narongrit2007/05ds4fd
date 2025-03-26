@@ -21,8 +21,8 @@ print("System MrMaxNaJa")
 
 
 --เฉพาะ ADMIN \/
-_G.antLoop = false
-_G.Antloopm = false
+--_G.antLoop = false
+--_G.Antloopm = false
 
 -- รายการคีย์และวันหมดอายุ
 --loadstring(game:HttpGet("https://pastebin.com/raw/m3QzDi35"))()
