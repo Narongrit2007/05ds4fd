@@ -1,4 +1,5 @@
 print("System MrMaxNaJa")
+print("System MrMaxNaJa")
 --getgenv().Key = "5ISYD-9VTM4-CQGAW-FZPN9"
 
    --[[getgenv().config = {
