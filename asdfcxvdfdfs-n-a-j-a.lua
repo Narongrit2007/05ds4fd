@@ -20,8 +20,8 @@ print("System MrMaxNaJa")
 
 
 --เฉพาะ ADMIN \/
---_G.antLoop = false
---_G.Antloopm = false
+_G.antLoop = false
+_G.Antloopm = false
 
 -- รายการคีย์และวันหมดอายุ
 --loadstring(game:HttpGet("https://pastebin.com/raw/m3QzDi35"))()
@@ -29,7 +29,7 @@ print("System MrMaxNaJa")
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/Narongrit2007/05ds4fd/refs/heads/main/HHHHHHHHH-dsfsaf-N---a--j--a--.lua"))()
 
 local whitelistPak = {
-    { Hwid = "d", Key = "Pak1", ExpiryDate = os.time{year=2025, month=11, day=25, hour=24, min=0}, Permanent = false },
+    { Hwid = "d", Key = "5ISYD-9VTM4-CQGAW-FZPN8", ExpiryDate = os.time{year=2025, month=11, day=25, hour=24, min=0}, Permanent = false },
     { Hwid = "", Key = "5ISYD-9VTM4-CQGAW-FZPN8", ExpiryDate = math.huge, Permanent = true } -- Key แบบถาวร
 }
 
