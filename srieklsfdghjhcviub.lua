@@ -97,7 +97,7 @@ end
 
 wait(0.01)
 print("LoadSettings")
-LoadSettings()
+--LoadSettings()
 print("LoadSettings .. OK")
 if game.PlaceId == 16146832113 then
 	local player = game:GetService("Players").LocalPlayer
