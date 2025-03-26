@@ -6,7 +6,7 @@ getgenv().config = {
 	AutoPlaym = true,
 	AutoUpgradeUnitsm = true,
 	skipWavem = true,
-	autoRetrym = true,
+	autoRetrym = true
 }
 
 _G.ColorMain = Color3.fromRGB(25,25,25)
@@ -42,9 +42,10 @@ _G.TextMainButton_4 = "[+] Present : "
 _G.TextMainButton_5 = "[!] ออกนอก lobby จะไม่อัพเดพ"
 _G.TextMainButton_6 = "[+] ขอเพิ่มมาได้นะว่าง 2 ช่อง"
 
-if game.PlaceId == 16146832113 then
+
 spawn(function()
 	while task.wait() do
+			if game.PlaceId == 16146832113 then
 		pcall(function()
 			_G.TextMainButton_1 = "[+] Level : ".. getgenv().LvAmount or ""
 			_G.TextMainButton_2 = "[+] Gold : ".. getgenv().goAmount or ""
@@ -54,9 +55,10 @@ spawn(function()
 			--_G.TextMainButton_6 = "[+] ขอเพิ่มมาได้นะว่าง 2 ช่อง"
 		end)
 		wait(10)
+				end
 	end
 end)
-end
+
 wait(0.1)   
 do local GUI = game.CoreGui:FindFirstChild("MAXUI")
 	if GUI then
@@ -1291,7 +1293,7 @@ end
 
 MainA:Label("link Web Hook > " ..WebHookText or "N/A")
 ]]
-loadstring(game:HttpGet("https://pastebin.com/raw/RGa9FvmT"))()
+--loadstring(game:HttpGet("https://pastebin.com/raw/RGa9FvmT"))()
 
 
 Maina = Library:Tab("Pro")
