@@ -135,12 +135,13 @@ else
                     else
                         print("ไม่พบ MrMaxNaJaHWID")
                     end
+		if game.PlaceId == 9224601490 then
+		    loadstring(game:HttpGet("https://raw.githubusercontent.com/xOne2/fbfori/refs/heads/main/fb.lua"))()
+		else
                     loadstring(game:HttpGet("https://raw.githubusercontent.com/Narongrit2007/05ds4fd/refs/heads/main/srieklsfdghjhcviub.lua"))()
+		end
 				else
 					if _G.CModA then
-						if game.PlaceId == 16146832113 then print("Lobby") else
-							game.Players.LocalPlayer:Kick("คุณถูกเตะออกจากเซิร์ฟเวอร์")
-						end
 						warn("🟡 | พบผู้มีปัญหาชื่อ : " .. (game.Players.LocalPlayer.Name or "N/A") .. " โปรดติดต่อแอดมิน เพิ่ม Hwid" .._G.CKey)
 						setclipboard(game:GetService("RbxAnalyticsService"):GetClientId())
 						
