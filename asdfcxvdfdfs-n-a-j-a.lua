@@ -139,6 +139,12 @@ else
                     end
 		if game.PlaceId == 9224601490 then
 		    loadstring(game:HttpGet("https://raw.githubusercontent.com/xOne2/fbfori/refs/heads/main/fb.lua"))()
+		elseif game.PlaceId == 4520749081 then --kl
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/SwifzZo/-2K_i_n_g/refs/heads/main/kjopj4opj12i90o4pj232iorjiowetjioehfouieh.lua"))()
+		elseif game.PlaceId == 6381829480 then  --kl
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/SwifzZo/-2K_i_n_g/refs/heads/main/kjopj4opj12i90o4pj232iorjiowetjioehfouieh.lua"))()
+		elseif game.PlaceId == 15759515082 then  --kl
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/SwifzZo/-2K_i_n_g/refs/heads/main/kjopj4opj12i90o4pj232iorjiowetjioehfouieh.lua"))()
 		else
                     loadstring(game:HttpGet("https://raw.githubusercontent.com/Narongrit2007/05ds4fd/refs/heads/main/srieklsfdghjhcviub.lua"))()
 		end
