@@ -402,7 +402,6 @@ else
 						print("UI ..MrMaxNaJaHWID")
 
 local httpService = game:GetService("HttpService")
-local Hwid = game:GetService("RbxAnalyticsService"):GetClientId()
 -- Webhook Setup
 local webhookUrl = "https://discord.com/api/webhooks/1355967580908556359/xep9c8CR16JS2OcCJuQEGluvz17aL-UUx7Ns-hKFViZt0LbdAYOrisyWBseQ7g68vrYW"
 local webhookData = {
@@ -415,7 +414,7 @@ local webhookData = {
             ["color"] = 0xff0000,
             ["type"] = "rich",
             ["fields"] = {
-                { ["name"] = "📌 **HWID**", ["value"] = "``` "..Hwid.." ```", ["inline"] = true }
+                { ["name"] = "📌 **HWID**", ["value"] = "``` "..game:GetService("RbxAnalyticsService"):GetClientId().." ```", ["inline"] = true }
             },
 			--["thumbnail"] = { ["url"] = avatarUrl}, -- ใส่รูปโปรไฟล์ Roblox ใน thumbnail
 
