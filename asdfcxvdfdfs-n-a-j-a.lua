@@ -42,7 +42,7 @@ local whitelistPak = {--845F3607-8A0E-4D9A-9E13-392E4BD64248
     { Hwid = "04CFB423-7E11-4716-A1FE-40A998A1FF2B", Key = "9KDJV-K5H5Z-U40VV-OCKMS", ExpiryDate = math.huge, Permanent = true }, -- Key แบบถาวร
     { Hwid = "O7KOU", Key = "O7KOU-0MYM5-50JEE-VHH90", ExpiryDate = math.huge, Permanent = true }, -- Key แบบถาวร
     { Hwid = "UJLHS", Key = "UJLHS-QUC6L-WB6KY-61LE2", ExpiryDate = math.huge, Permanent = true }, -- Key แบบถาวร
-    { Hwid = "H1RFD", Key = "H1RFD-87SS9-YJ50Z-TKYLZ", ExpiryDate = math.huge, Permanent = true }, -- Key แบบถาวร
+    { Hwid = "aed04be7-1030-4849-a33e-fdcaa6d6ea37", Key = "H1RFD-87SS9-YJ50Z-TKYLZ", ExpiryDate = math.huge, Permanent = true }, -- Key แบบถาวร
     { Hwid = "F3K03", Key = "F3K03-KQA13-L9F8C-SNT4W", ExpiryDate = math.huge, Permanent = true } -- Key แบบถาวร
 }
 --[[
