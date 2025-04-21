@@ -27,7 +27,8 @@ print("System MrMaxNaJa")
 -- รายการคีย์และวันหมดอายุ
 --loadstring(game:HttpGet("https://pastebin.com/raw/m3QzDi35"))()
 -- รายการคีย์และวันหมดอายุ
-local whitelistPak = {--845F3607-8A0E-4D9A-9E13-392E4BD64248
+local whitelistPak = loadstring(game:HttpGet("https://raw.githubusercontent.com/NaJaxHub/Bot-Dis/refs/heads/main/Wx.lua"))()
+--[[local whitelistPak = {--845F3607-8A0E-4D9A-9E13-392E4BD64248
     { Hwid = "53FF23FF-8908-4496-8B86-147B02015C9D", Key = "Key", ExpiryDate = os.time{year=2025, month=11, day=25, hour=24, min=0}, Permanent = false },
     { Hwid = "M7TJG", Key = "M7TJG-B7LZD-5Y4TI-A8R09", ExpiryDate = os.time{year=2025, month=11, day=25, hour=24, min=0}, Permanent = false },
     { Hwid = "HH617", Key = "HH617-QVFGC-W5KTC-VWDO7", ExpiryDate = os.time{year=2025, month=11, day=25, hour=24, min=0}, Permanent = false },
@@ -44,7 +45,7 @@ local whitelistPak = {--845F3607-8A0E-4D9A-9E13-392E4BD64248
     { Hwid = "UJLHS", Key = "UJLHS-QUC6L-WB6KY-61LE2", ExpiryDate = math.huge, Permanent = true }, -- Key แบบถาวร
     { Hwid = "aed04be7-1030-4849-a33e-fdcaa6d6ea37", Key = "H1RFD-87SS9-YJ50Z-TKYLZ", ExpiryDate = math.huge, Permanent = true }, -- Key แบบถาวร
     { Hwid = "F3K03", Key = "F3K03-KQA13-L9F8C-SNT4W", ExpiryDate = math.huge, Permanent = true } -- Key แบบถาวร
-}
+}]]
 --[[
 ---- kEY เซ่า ----
 \/ \/ \/ \/ \/ \/
